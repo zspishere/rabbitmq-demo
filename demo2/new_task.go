@@ -5,11 +5,12 @@ import (
 	"log"
 	"os"
 	. "rabbitmq_demo/utils"
+	. "rabbitmq_demo/global"
 	"strings"
 )
 
 func main() {
-	conn, err := amqp.Dial("amqp://root:123123@10.211.28.93:5672/")
+	conn, err := amqp.Dial(RabbitmqUrl)
 	FailOnError(err, "Failed to connect to RabbitMQ")
 	defer conn.Close()
 

@@ -1,0 +1,2 @@
+#rabbitmq-url: amqp://root:123123@10.211.28.93:5672/
+rabbitmq-url: amqp://root:123123@127.0.0.1:5672/

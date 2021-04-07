@@ -3,17 +3,17 @@ package main
 import (
 	"github.com/streadway/amqp"
 	"log"
-	"rabbitmq_demo/utils"
+	. "rabbitmq_demo/global"
+	. "rabbitmq_demo/utils"
 )
 
-
 func main() {
-	conn, err := amqp.Dial("amqp://root:123123@10.211.28.93:5672/")
-	utils.FailOnError(err, "Failed to connect to RabbitMQ")
+	conn, err := amqp.Dial(RabbitmqUrl)
+	FailOnError(err, "Failed to connect to RabbitMQ")
 	defer conn.Close()
 
 	ch, err := conn.Channel()
-	utils.FailOnError(err, "Failed to open a channel")
+	FailOnError(err, "Failed to open a channel")
 	defer ch.Close()
 
 	q, err := ch.QueueDeclare(
@@ -24,7 +24,7 @@ func main() {
 		false,   // no-wait
 		nil,     // arguments
 	)
-	utils.FailOnError(err, "Failed to declare a queue")
+	FailOnError(err, "Failed to declare a queue")
 
 	body := "Hello World!"
 	err = ch.Publish(
@@ -36,6 +36,6 @@ func main() {
 			ContentType: "text/plain",
 			Body:        []byte(body),
 		})
-	utils.FailOnError(err, "Failed to publish a message")
+	FailOnError(err, "Failed to publish a message")
 	log.Printf(" [x] Sent %s", body)
 }
