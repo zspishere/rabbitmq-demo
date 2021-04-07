@@ -6,8 +6,8 @@ import (
 	"strings"
 
 	"github.com/streadway/amqp"
-	. "rabbitmq_demo/utils"
 	. "rabbitmq_demo/global"
+	. "rabbitmq_demo/utils"
 )
 
 func main() {
@@ -34,8 +34,8 @@ func main() {
 	err = ch.Publish(
 		"logs_topic",          // exchange
 		severityFrom(os.Args), // routing key
-		false, // mandatory
-		false, // immediate
+		false,                 // mandatory
+		false,                 // immediate
 		amqp.Publishing{
 			ContentType: "text/plain",
 			Body:        []byte(body),

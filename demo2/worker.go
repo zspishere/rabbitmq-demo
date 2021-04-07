@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"github.com/streadway/amqp"
 	"log"
-	. "rabbitmq_demo/utils"
 	. "rabbitmq_demo/global"
+	. "rabbitmq_demo/utils"
 	"time"
 )
 

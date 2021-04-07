@@ -4,8 +4,8 @@ import (
 	"github.com/streadway/amqp"
 	"log"
 	"os"
-	. "rabbitmq_demo/utils"
 	. "rabbitmq_demo/global"
+	. "rabbitmq_demo/utils"
 	"strings"
 )
 

@@ -9,10 +9,9 @@ import (
 	"time"
 
 	"github.com/streadway/amqp"
-	. "rabbitmq_demo/utils"
 	. "rabbitmq_demo/global"
+	. "rabbitmq_demo/utils"
 )
-
 
 func randomString(l int) string {
 	bytes := make([]byte, l)

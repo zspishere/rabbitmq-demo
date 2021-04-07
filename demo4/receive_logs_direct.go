@@ -1,4 +1,3 @@
-
 package main
 
 import (
@@ -6,10 +5,9 @@ import (
 	"os"
 
 	"github.com/streadway/amqp"
-	. "rabbitmq_demo/utils"
 	. "rabbitmq_demo/global"
+	. "rabbitmq_demo/utils"
 )
-
 
 func main() {
 	conn, err := amqp.Dial(RabbitmqUrl)

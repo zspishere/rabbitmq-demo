@@ -5,10 +5,9 @@ import (
 	"strconv"
 
 	"github.com/streadway/amqp"
-	. "rabbitmq_demo/utils"
 	. "rabbitmq_demo/global"
+	. "rabbitmq_demo/utils"
 )
-
 
 func fib(n int) int {
 	if n == 0 {
