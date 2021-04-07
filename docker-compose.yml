@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  rabbit:
+    image: rabbitmq:3.8-management
+    container_name: "rabbitmq"
+    restart: always
+    environment:
+      - RABBITMQ_DEFAULT_USER=root
+      - RABBITMQ_DEFAULT_PASS=123123
+    volumes:
+      - ./data:/var/lib/rabbitmq
+      - ./logs:/var/log/rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    #   - "15692:15692"  # prometheus
